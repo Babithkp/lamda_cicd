@@ -20,6 +20,11 @@ app.get("/getUser",async (req,res)=>{
   console.log(user.data);
   res.send(user.data);
 })
+app.get("/getUserById",async (req,res)=>{
+  const user = await axios.get("https://jsonplaceholder.typicode.com/users/1");
+  console.log(user.data);
+  res.send(user.data);
+})
 
 
 export const handler = serverless(app);
